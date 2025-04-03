@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starlink Direct to Cell - Authentication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .gateway-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        }
+        .gateway-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+    </style>
+</head>
+<body class="gateway-bg min-h-screen flex items-center justify-center p-4">
+    <div class="gateway-card rounded-xl shadow-2xl p-8 w-full max-w-md">
+        <div class="text-center mb-8">
+            <i class="fas fa-satellite text-blue-500 text-4xl mb-4"></i>
+            <h1 class="text-2xl font-bold text-gray-800">Welcome to Starlink</h1>
+            <p class="text-gray-600">Please authenticate to continue</p>
+        </div>
+
+        <div class="space-y-4">
+            <a href="signup.html" class="block bg-blue-600 hover:bg-blue-700 text-white text-center py-3 px-4 rounded-lg transition duration-300">
+                Create Account
+            </a>
+            
+            <a href="signin.html" class="block border border-blue-500 text-blue-500 hover:bg-blue-50 text-center py-3 px-4 rounded-lg transition duration-300">
+                Sign In
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is already authenticated
+        const user = localStorage.getItem('currentUser');
+        if (user) {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
