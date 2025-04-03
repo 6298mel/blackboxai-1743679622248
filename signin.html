@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Starlink Direct to Cell</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
+        <div class="text-center mb-8">
+            <i class="fas fa-satellite text-blue-500 text-4xl mb-4"></i>
+            <h1 class="text-2xl font-bold text-gray-800">Welcome Back</h1>
+            <p class="text-gray-600">Sign in to your account</p>
+        </div>
+
+        <form id="signinForm" class="space-y-4">
+            <div>
+                <label class="block text-gray-700 mb-2">Email</label>
+                <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded-lg" required>
+            </div>
+
+            <div>
+                <label class="block text-gray-700 mb-2">Password</label>
+                <input type="password" id="password" class="w-full p-3 border border-gray-300 rounded-lg" required>
+                <div class="text-right mt-1">
+                    <a href="#" class="text-sm text-blue-500 hover:underline">Forgot password?</a>
+                </div>
+            </div>
+
+            <div class="flex items-center">
+                <input type="checkbox" id="remember" class="rounded text-blue-500">
+                <label for="remember" class="ml-2 text-gray-700">Remember me</label>
+            </div>
+
+            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg transition duration-300">
+                Sign In
+            </button>
+
+            <div class="text-center text-sm text-gray-600">
+                Don't have an account? <a href="signup.html" class="text-blue-500 hover:underline">Sign up</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Handle form submission
+        document.getElementById('signinForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('remember').checked;
+
+            // Get users from localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+            
+            // Find matching user
+            const user = users.find(u => u.email === email && u.password === password);
+            
+            if (user) {
+                // Save user session
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                
+                // Set session expiry if "Remember me" is checked
+                if (rememberMe) {
+                    const expiry = new Date();
+                    expiry.setDate(expiry.getDate() + 30); // 30 days
+                    localStorage.setItem('sessionExpiry', expiry.toISOString());
+                }
+                
+                // Redirect to packages page
+                window.location.href = 'index.html';
+            } else {
+                alert('Invalid email or password');
+            }
+        });
+
+        // Redirect if already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const user = localStorage.getItem('currentUser');
+            if (user) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
