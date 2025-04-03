@@ -1,0 +1,96 @@
+[
+    {
+        "id": 1,
+        "name": "Starlink Starter",
+        "price": 80,
+        "data": "3GB",
+        "validity": "24 hours",
+        "description": "Basic package for light browsing and messaging",
+        "features": ["WhatsApp", "Email", "Light browsing"],
+        "popular": false
+    },
+    {
+        "id": 2,
+        "name": "Starlink Social",
+        "price": 350,
+        "data": "15GB",
+        "validity": "7 days",
+        "description": "Great for social media and email",
+        "features": ["All social media", "Email", "Light streaming"],
+        "popular": false
+    },
+    {
+        "id": 3,
+        "name": "Starlink Streamer",
+        "price": 600,
+        "data": "10GB",
+        "validity": "14 days",
+        "description": "Ideal for streaming music and videos",
+        "features": ["HD video streaming", "Music streaming", "Online gaming"],
+        "popular": true
+    },
+    {
+        "id": 4,
+        "name": "Starlink Family",
+        "price": 1000,
+        "data": "20GB",
+        "validity": "30 days",
+        "description": "Perfect for heavy users and families",
+        "features": ["Multiple devices", "4K streaming", "Family sharing"],
+        "popular": true
+    },
+    {
+        "id": 5,
+        "name": "Starlink Pro",
+        "price": 2500,
+        "data": "50GB",
+        "validity": "90 days",
+        "description": "Long-term package for moderate users",
+        "features": ["Priority bandwidth", "Unlimited devices", "Cloud storage"],
+        "popular": false
+    },
+    {
+        "id": 6,
+        "name": "Starlink Premium",
+        "price": 5000,
+        "data": "100GB",
+        "validity": "3 months",
+        "description": "Premium package for power users",
+        "features": ["4K/8K streaming", "Gaming priority", "Global roaming"],
+        "popular": false
+    },
+    {
+        "id": 7,
+        "name": "Starlink Unlimited",
+        "price": 8000,
+        "data": "Unlimited",
+        "validity": "30 days",
+        "description": "Truly unlimited high-speed data",
+        "features": [
+            "Unlimited high-speed data",
+            "No throttling",
+            "4K/8K streaming",
+            "Gaming priority",
+            "Global roaming",
+            "24/7 premium support"
+        ],
+        "popular": true,
+        "highlight": true
+    },
+    {
+        "id": 8,
+        "name": "Starlink Business",
+        "price": 15000,
+        "data": "Unlimited",
+        "validity": "30 days",
+        "description": "Enterprise-grade connectivity",
+        "features": [
+            "Unlimited priority data",
+            "Static IP address",
+            "99.9% uptime SLA",
+            "Dedicated support",
+            "Advanced security"
+        ],
+        "business": true
+    }
+]
