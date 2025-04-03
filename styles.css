@@ -1,0 +1,50 @@
+/* Package Card Styling */
+.package-card {
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.package-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.featured-card {
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    border-left: 4px solid #3b82f6;
+}
+
+.business-card {
+    border: 2px solid #8b5cf6;
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+}
+
+.popular-badge {
+    background-color: #f59e0b;
+    color: #92400e;
+}
+
+.business-badge {
+    background-color: #8b5cf6;
+    color: white;
+}
+
+.feature-list {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.package-card:hover .feature-list {
+    max-height: 200px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .package-card {
+        margin-bottom: 1.5rem;
+    }
+}
